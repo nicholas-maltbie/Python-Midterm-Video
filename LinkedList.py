@@ -46,7 +46,12 @@ max_ll = y_comb(\
 #        yield None
 #    if ll:
 #        return next(helper(ll))
-        
+
+def rec_copy(ll, acc=None):
+    return rec_copy(get_next(ll), make_node(get_val(ll), acc)) if ll else acc
+
+def rec_make(size, acc=None):
+    return recurse(size - 1, make_node(size, acc)) if size > 0 else acc
 
 def copy_list(ll):
     if ll:
