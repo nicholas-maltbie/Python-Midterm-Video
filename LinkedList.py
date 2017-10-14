@@ -42,7 +42,7 @@ def make_list(size):
 if __name__ == "__main__":
     from datetime import datetime
     
-    list_sizes = [{'size':10 ** v, 'pow':v} for v in range(1, 6+1)]
+    list_sizes = [{'size':10 ** v, 'pow':v} for v in range(1, 7+1)]
     
     def calc_time(n):
         t1 = datetime.now()
