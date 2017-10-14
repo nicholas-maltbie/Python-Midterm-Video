@@ -1,0 +1,6 @@
+Took 0.000039 seconds to allocate and copy list of size 10^1
+Took 0.000257 seconds to allocate and copy list of size 10^2
+Took 0.002699 seconds to allocate and copy list of size 10^3
+Took 0.030591 seconds to allocate and copy list of size 10^4
+Took 0.342707 seconds to allocate and copy list of size 10^5
+Took 4.337266 seconds to allocate and copy list of size 10^6

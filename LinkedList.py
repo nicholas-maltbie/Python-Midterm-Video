@@ -4,54 +4,20 @@ Time Linked List copy of list of integers
 
 """
 
-y_comb = \
-    lambda F: \
-        (lambda procedure: \
-            F(lambda x: procedure(procedure)(x)) \
-        )(lambda procedure: \
-            F(lambda x: procedure(procedure)(x)))
+def make_node(val, next=None):
+    return [val, next]
 
-make_node = lambda val, next=None: [val, next]
-get_val = lambda node: node[0]
-get_next = lambda node: node[1]
+def get_val(node):
+    return node[0]
 
-max_ll = y_comb(\
-    lambda arg:
-        lambda n, curr_max:
-            arg(get_next(n), max(get_val(n), curr_max)) if n else curr_max)
-            #get_val(l), arg(get_next(l)) if get_next(l) else get_val(l))
+def get_next(node):
+    return node[1]
 
-#copy_ll = lamda l:  
+def set_val(node, val):
+    node[0] = val
 
-#def copy_list(ll):
-#    return (lambda ll, acc: make_node(get_val(ll), acc) if ll else acc)\
-#            (copy_list(get_next(ll)), make_node(ll, get_next(ll))) if ll else None
-
-#copy_ll = y_comb(\
-#    lambda arg: \
-#        lambda l:
-#            (lambda node, acc: \
-#                make_node(get_val(node), arg(acc)) if acc else None)
-#            (get_next(l), get_next(l)))
-#                #make_node(get_val(node), arg(get_next(node))) if node else None)
-
-
-    
-#def copy_yield(ll):
-#    def helper(sub, acc=None):
-#        def helper_helper():
-#            yield from helper(get_next(ll), acc)
-#        if sub:
-#            yield make_node(get_val(sub), next(helper_helper()))
-#        yield None
-#    if ll:
-#        return next(helper(ll))
-
-def rec_copy(ll, acc=None):
-    return rec_copy(get_next(ll), make_node(get_val(ll), acc)) if ll else acc
-
-def rec_make(size, acc=None):
-    return recurse(size - 1, make_node(size, acc)) if size > 0 else acc
+def set_next(node, next):
+    node[1] = next
 
 def copy_list(ll):
     if ll:
@@ -59,7 +25,7 @@ def copy_list(ll):
         ptr = get_next(ll)
         curr = s
         while get_next(ptr):
-            curr[1] = make_node(get_val(ptr))
+            set_next(curr, make_node(get_val(ptr)))
             curr = get_next(curr)
             ptr = get_next(ptr)
         return s
@@ -69,8 +35,26 @@ def make_list(size):
     l = s
     for i in range(1, size):
         n = make_node(i)
-        l[1] = n
+        set_next(l, n)
         l = n
     return s
 
+if __name__ == "__main__":
+    from datetime import datetime
+    
+    list_sizes = [{'size':10 ** v, 'pow':v} for v in range(1, 6+1)]
+    
+    def calc_time(n):
+        t1 = datetime.now()
+        l = make_list(n)
+        l2 = copy_list(l)
+        t2 = datetime.now()
+        return (t2 - t1).total_seconds()
+    
+    for size in list_sizes:
+        n = size['size']
+        times = [calc_time(n) for i in range(10)]
+        average = sum(times) / len(times)
+        print('Took %f seconds to allocate and copy list of size 10^%i' % (average, size['pow']))
+        
 
