@@ -1,0 +1,5 @@
+Took 0.000215 seconds to allocate and sort a list of size 10
+Took 0.001072 seconds to allocate and sort a list of size 100
+Took 0.012409 seconds to allocate and sort a list of size 1000
+Took 0.156855 seconds to allocate and sort a list of size 10000
+Took 1.938133 seconds to allocate and sort a list of size 100000
