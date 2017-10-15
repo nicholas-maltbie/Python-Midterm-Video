@@ -33,7 +33,7 @@ def mergesort(nums):
 if __name__ == "__main__":
     from datetime import datetime
     
-    file_names = ["rand"+str(n)+".txt" for n in range(2,6+1)]
+    file_names = ["rand"+str(n)+".txt" for n in range(2,7+1)]
     
     def calc_time(name):
         t1 = datetime.now()
