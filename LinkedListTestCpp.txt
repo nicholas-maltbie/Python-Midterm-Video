@@ -1,0 +1,7 @@
+Took 0.000026 seconds to copy a linked list of size 10^1
+Took 0.000109 seconds to copy a linked list of size 10^2
+Took 0.000934 seconds to copy a linked list of size 10^3
+Took 0.003074 seconds to copy a linked list of size 10^4
+Took 0.020227 seconds to copy a linked list of size 10^5
+Took 0.198560 seconds to copy a linked list of size 10^6
+Took 1.965933 seconds to copy a linked list of size 10^7

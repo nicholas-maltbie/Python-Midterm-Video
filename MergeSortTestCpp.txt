@@ -1,0 +1,6 @@
+Took 0.000339 seconds to copy a linked list of size 10
+Took 0.000142 seconds to copy a linked list of size 100
+Took 0.000892 seconds to copy a linked list of size 1000
+Took 0.009761 seconds to copy a linked list of size 10000
+Took 0.080305 seconds to copy a linked list of size 100000
+Took 0.854459 seconds to copy a linked list of size 1000000

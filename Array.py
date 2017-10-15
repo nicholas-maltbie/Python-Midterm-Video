@@ -13,7 +13,7 @@ def copy_list(array):
 if __name__ == "__main__":
     from datetime import datetime
     
-    list_sizes = [{'size':10 ** v, 'pow':v} for v in range(1, 8+1)]
+    list_sizes = [{'size':10 ** v, 'pow':v} for v in range(1, 7+1)]
     
     def calc_time(n):
         t1 = datetime.now()

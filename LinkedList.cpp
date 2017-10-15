@@ -2,17 +2,20 @@
 #include<stdio.h>
 #include<ctime>
 
-using namespace std
+using namespace std;
 
 struct Node {
     int val;
     Node* next;
-}
+};
 
 Node* make_list(int length) {
     Node* start = NULL;
-    for (int i = length - 1; i >= 0; i++) {
-        start = new Node(i, start);
+    for (int i = length - 1; i >= 0; i--) {
+        Node* next = start;
+        start = new Node;
+        start->val = i;
+        start->next = next;
     }
     return start;
 }
@@ -25,33 +28,37 @@ void delete_list(Node* start) {
     }
 }
 
-int* copy_list(int* start, int length) {
-    int* copy = new int[length];
-    for(int i = 0; i < length; i++) {
-        copy[i] = start[i];
+Node* copy_list(Node* start) {
+    Node* s = new Node;
+    s->val = start->val;
+    Node* ptr = start->next;
+    Node* curr = s;
+    while (ptr->next != NULL) {
+        Node* tmp = new Node;
+        tmp->val = ptr->val;
+        curr->next = tmp;
+        curr = tmp;
+        ptr = ptr->next;
     }
-    return copy
+    return s;
 }
 
 int main () {
-    int size = 10
-    for(int i = 1; i <= 7; i++) {
-        cock_t begin = clock();
+    int size = 10;
+    for (int i = 1; i <= 7; i++) {
+        clock_t begin = clock();
         
-        int* array = new int[size];
-        for(int i = 0; i < size; i++) {
-            array[i] = i;
-        }
-        int* copy = copy_list(start, size);
+        Node* list = make_list(size);
+        Node* copy = copy_list(list);
         
         clock_t end = clock();
         
-        delete[] array;
-        delete[] copy;
+        delete_list(list);
+        delete_list(copy);
         
-        double elapsed_secds = double(end - begin) / CLOCKS_PER_SEC;
+        float elapsed_secds = float( end - begin ) /  CLOCKS_PER_SEC;
         
-        printf("Took %d seconds to copy a list of size 10^%i", elapsed_secds, i);
+        printf("Took %f seconds to copy a linked list of size 10^%i\n", elapsed_secds, i);
         
         size *= 10;
     }

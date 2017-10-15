@@ -1,0 +1,8 @@
+Took 0.000010 seconds to copy a list of size 10^1
+Took 0.000007 seconds to copy a list of size 10^2
+Took 0.000049 seconds to copy a list of size 10^3
+Took 0.000395 seconds to copy a list of size 10^4
+Took 0.002332 seconds to copy a list of size 10^5
+Took 0.017804 seconds to copy a list of size 10^6
+Took 0.145877 seconds to copy a list of size 10^7
+Took 1.596493 seconds to copy a list of size 10^8
