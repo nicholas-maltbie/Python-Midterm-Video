@@ -1,4 +1,4 @@
-//compile with "g++ -std=c++11 MergeSort.cpp -o MergeSort.out"
+//compile with "g++ -std=c++11 MergeSortLL.cpp -o MergeSortLL.out"
 
 #include<iostream>
 #include<stdio.h>
@@ -8,8 +8,8 @@
 using namespace std;
 
 struct Node {
-    int val;
-    Node* next;
+    int val = 0;
+    Node* next = NULL;
 };
 
 Node* merge(Node* l1, Node* l2){
@@ -74,7 +74,7 @@ void delete_list(Node* start) {
 
 
 int main () {
-    for (int i = 2; i <= 7; i++) {
+    for (int i = 2; i <= 2; i++) {
         clock_t begin = clock();
         
         ifstream infile("rand" + std::to_string(i) + ".txt");
@@ -94,15 +94,17 @@ int main () {
             ptr->next = tmp;
             ptr = ptr->next;
         }
-        mergesort(ll);
+        Node* sorted = mergesort(ll);
         
-        delete[] ll;
+        delete_list(sorted);
         
         clock_t end = clock();
         
+        infile.close();
+        
         float elapsed_secds = float( end - begin ) /  CLOCKS_PER_SEC;
         
-        printf("Took %f seconds to allocate adn sort a linked linked list of size %i\n", elapsed_secds, n);
+        printf("Took %f seconds to allocate and sort a linked linked list of size %i\n", elapsed_secds, n);
     }
 }
 
