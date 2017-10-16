@@ -1,14 +1,14 @@
 //compile with "g++ -std=c++11 MergeSortLL.cpp -o MergeSortLL.out"
 
-#include<iostream>
-#include<stdio.h>
-#include<ctime>
+#include <iostream>
+#include <stdio.h>
+#include <ctime>
 #include <fstream>
 
 using namespace std;
 
 struct Node {
-    int val = 0;
+    long val = 0;
     Node* next = NULL;
 };
 
@@ -53,7 +53,7 @@ Node* mergesort(Node* nums) {
             ptr2 = ptr2->next;
             if (ptr2 != NULL) {
                 ptr1 = ptr1->next;
-                temp = nums->next;
+                temp = temp->next;
                 ptr2 = ptr2->next;
             }
         }
