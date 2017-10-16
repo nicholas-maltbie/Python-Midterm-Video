@@ -74,7 +74,7 @@ void delete_list(Node* start) {
 
 
 int main () {
-    for (int i = 2; i <= 2; i++) {
+    for (int i = 2; i <= 7; i++) {
         clock_t begin = clock();
         
         ifstream infile("rand" + std::to_string(i) + ".txt");

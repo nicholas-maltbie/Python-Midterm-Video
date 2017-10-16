@@ -41,7 +41,7 @@ if __name__ == "__main__":
     file_names = ["rand"+str(n)+".txt" for n in range(2,7+1)]
     
     def calc_time(name):
-        t1 = datetime.now()
+        t1 = datetime.now()z
         with open(name) as input_list:
             n = int(input_list.readline().strip())
             unsorted = [int(input_list.readline().strip()) for _ in range(n)]
