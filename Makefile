@@ -9,5 +9,6 @@ all:
 
 	# cpp bindings for cpython
 	# ---
+	cd Array && python3 setup.py install
 	cd MergeSort && python3 setup.py install
 	cd MergeSortLL && python3 setup.py install
