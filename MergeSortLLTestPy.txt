@@ -1,0 +1,6 @@
+Took 0.000181 seconds to allocate and sort a linked list of size 10
+Took 0.000559 seconds to allocate and sort a linked list of size 100
+Took 0.004243 seconds to allocate and sort a linked list of size 1000
+Took 0.044491 seconds to allocate and sort a linked list of size 10000
+Took 0.440316 seconds to allocate and sort a linked list of size 100000
+Took 4.883148 seconds to allocate and sort a linked list of size 1000000
