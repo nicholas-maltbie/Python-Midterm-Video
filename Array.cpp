@@ -5,14 +5,17 @@ using namespace std;
 
 int* copy_list(int* start, int length) {
     int* copy = new int[length];
-    for(int i = 0; i < length; i++) {
+
+    for (int i = 0; i < length; i++) {
         copy[i] = start[i];
     }
+
     return copy;
 }
 
 int main () {
     int size = 10;
+
     for (int i = 1; i <= 8; i++) {
         clock_t begin = clock();
         
